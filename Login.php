@@ -7,20 +7,20 @@
 </head>
 <body>
 <div class="sign-in">
-<form class="form-inline pull-right" role="form">
+<form class="form-inline pull-right" role="form" action="signin.php" method="post">
   <div class="form-group">
     <label class="sr-only" for="exampleInputEmail2">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email" name="email">
   </div>
   <div class="form-group">
     <label class="sr-only" for="exampleInputPassword2">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" name = "password">
   </div>
   <button type="submit" class="btn btn-default" name="submit">Sign in</button>
 </form>
 </div>
 <div class="sign-up-form form-margin-top">
-<form class="form-horizontal" role="form">
+<form class="form-horizontal" role="form" action="signup.php" method="post">
   <div class="form-group">
     <label for="firstname" class="col-sm-3 control-label">Firstname</label>
     <div class="col-sm-9">
@@ -60,8 +60,8 @@
   <div class="form-group">
     <label class="col-sm-3 control-label">Gender</label>
     <div class="col-sm-9 gender-margin-top">
-      <input type="radio" name="sex" value="male">Male
-	  <input type="radio" name="sex" value="female">Female
+      <input type="radio" name="sex" value="1" required>Male
+	  <input type="radio" name="sex" value="2" required>Female
     </div>
   </div>
   <div class="form-group">
