@@ -21,7 +21,7 @@
 	$result = mysqli_query($conn,$query);
 	while ($row = mysqli_fetch_assoc($result)) {
 		if($row['email'] == $email && $row['password'] == $shapassword) {
-			echo "Loged in";
+			header('location: index.php');
 			die();
 		}
 	}

@@ -7,7 +7,7 @@
 		die();
 	}
 	if($_POST['password'] != $_POST['re-password']) {
-		echo "wrong password";
+		echo "Re-type correct password";
 		die();
 	}
 
