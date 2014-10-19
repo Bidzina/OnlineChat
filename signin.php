@@ -21,6 +21,10 @@
 	$result = mysqli_query($conn,$query);
 	while ($row = mysqli_fetch_assoc($result)) {
 		if($row['email'] == $email && $row['password'] == $shapassword) {
+			if(session_status() == PHP_SESSION_NONE) {
+				session_start();
+			}
+			$_SESSION['email'] = $row['email'];
 			header('location: index.php');
 			die();
 		}
