@@ -4,6 +4,6 @@
 	if(empty($_SESSION['email'])) {
 		header('location:login.php');
 	} else {
-		echo "session";
+		header('location:main.php');
 	}
 ?>
