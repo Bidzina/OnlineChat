@@ -1,3 +1,7 @@
+body{
+	display: block;
+}
+
 .sign-in{
 	overflow: hidden;
 	margin: 30px 20px 0 0;
@@ -24,4 +28,12 @@
 .logout{
 	margin-top: 10px;
 	margin-left: 10px;
+
+}
+
+#email_msg{
+	position: absolute;
+	margin-top: 277px;
+	margin-left: 960px;
+	padding: 5px;
 }

@@ -7,7 +7,9 @@
 		die();
 	}
 	if($_POST['password'] != $_POST['re-password']) {
-		echo "Re-type correct password";
+		session_start();
+		$_SESSION['msg']="Re-type Correct Password";
+		header('location:login.php');
 		die();
 	}
 
@@ -29,9 +31,24 @@
 
 	$shapassword = sha1($password);
 
+	$email_exists=mysqli_query($conn, "SELECT * FROM `users` where email='$mail'");
+	
+	if($email_exists->num_rows>0){
+		session_start();
+		$_SESSION['msg']="Email is already taken";
+		header('location:login.php');
+	} else{
+	
 	$query = "INSERT INTO users(firstname,lastname,email,password,date,sex) values('$name','$lastname','$mail','$shapassword','$date',$sex)";
-	mysqli_query($conn,$query);
+		session_start();
+		$_SESSION['succmsg']="You registered successfully";
+		mysqli_query($conn,$query);
+		mysqli_close($conn);
+		header('location:login.php');
+		exit();
+	}
+	
 
-	mysqli_close($conn);
 
 ?>
+

@@ -1,9 +1,6 @@
 <?php
 
-	if( empty($_POST['email']) || empty($_POST['password']) ){
-		echo "enter all fields";
-		die();
-	}
+	
 	
 	$email = mysql_real_escape_string($_POST['email']);
 	$password = mysql_real_escape_string($_POST['password']);
@@ -24,11 +21,21 @@
 			if(session_status() == PHP_SESSION_NONE) {
 				session_start();
 			}
+
 			$_SESSION['email'] = $row['email'];
 			header('location: index.php');
 			die();
 		}
+		
+		
 	}
+		session_start();
+		$_SESSION['errmsg']='Email or Password is incorrect';
+		header('location:login.php');
+		die();
+	
+
+
 
 	mysqli_close($conn);
 
