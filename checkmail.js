@@ -5,7 +5,7 @@ $(function() {
 			data = {
 				'email': email
 			};
-
+		
 		$("#email_msg").removeClass().html('').css({display: 'none'});
 		if (email.length==0) {
 			$("#email_msg").addClass("alert alert-danger alert-error").html('E-mail field is required').fadeIn();
@@ -20,7 +20,13 @@ $(function() {
 			$("#email_msg").addClass("alert alert-danger alert-error").html('Incorrect E-mail').fadeIn();
 		}
 
+		
+
+
+
 	});
+
 });
+
 
 

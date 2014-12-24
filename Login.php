@@ -8,14 +8,13 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapc``dn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   <script src="jquery-1.11.1.min.js"></script>
   <script src="checkmail.js"></script>
 
 </head>
 <body>
-<div id="email_msg">
-</div>
+<span id="email_msg"></span>
 <div class="sign-in">
 <form class="form-inline pull-right" role="form" action="signin.php" method="post">
   <div class="form-group">
@@ -38,16 +37,20 @@
     </div>
   </div>
    <div class="form-group">
+
     <label for="lastname" class="col-sm-3 control-label">Lastname</label>
     <div class="col-sm-9">
       <input type="text" class="form-control" id="lastname" placeholder="Enter your Lastname" name="lastname" required>
     </div>
   </div>
+  <div>
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
     <div class="col-sm-9">
       <input type="email" class="form-control" id="inputEmail3" placeholder="Enter your Email" name="email" required>
     </div>
+
+  </div>
   </div>
   <div class="form-group">
     <label for="inputPassword3" class="col-sm-3 control-label">Password</label>

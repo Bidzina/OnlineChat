@@ -1,19 +1,35 @@
 <?php
-if(!empty($_POST['msg'])){
-$con = mysqli_connect("localhost","root","","onlinechat");
-if(!$con) {
+$conn = mysqli_connect("localhost","root","","onlinechat");
+if(!$conn) {
 		echo "Could not connect database !";
 		die();
 	}
-$msg=mysql_real_escape_string($_POST['msg']);
+
+$msg = $_POST['usermsg'];
+
+$query1 = "INSERT INTO chatmessages(messages) values('$msg')";
+
+mysqli_query($conn,$query1);
+
+$query2 = "SELECT messages
+FROM chatmessages
+ORDER BY id DESC
+LIMIT 1;";
+
+$result = mysqli_query($conn,$query2);
+
+$row=mysqli_fetch_assoc($result);
+	echo $row['messages'];
 
 
-$query = "INSERT INTO chatmessages(textarea) values('$msg')";
-mysqli_query($con,$query);
 
-mysql_close();
 
-}
 
-header("location: main.php")
+
+
+
+
+
+
+
  ?>

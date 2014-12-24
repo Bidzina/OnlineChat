@@ -13,7 +13,7 @@
 
 	$shapassword = sha1($password);
 
-	$query = "SELECT email,password FROM users;";
+	$query = "SELECT firstname,lastname,email,password FROM users;";
 
 	$result = mysqli_query($conn,$query);
 	while ($row = mysqli_fetch_assoc($result)) {
@@ -23,6 +23,8 @@
 			}
 
 			$_SESSION['email'] = $row['email'];
+			$_SESSION['name']=$row['firstname'].' '.$row['lastname'];
+
 			header('location: index.php');
 			die();
 		}
